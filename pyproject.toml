@@ -1,0 +1,39 @@
+[project]
+name = "two-tower-podcast"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.14.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.9.2",
+    "pandas>=2.2.3",
+    "pgvector>=0.3.6",
+    "psycopg2-binary>=2.9.10",
+    "pyarrow>=18.0.0",
+    "python-dotenv>=1.0.1",
+    "scikit-learn>=1.5.2",
+    "sqlalchemy>=2.0.36",
+    "torch>=2.5.1",
+    "tqdm>=4.67.0",
+    "transformers>=4.46.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.8.0",
+]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.ruff]
+# Enable only the rule for sorting imports
+lint.select = ["I001"]
+
+# Disable rules for removing unused imports
+lint.ignore = ["F401"]
+
+# Enable autofix for sorting imports
+lint.fixable = ["I001"]
